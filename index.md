@@ -37,6 +37,8 @@ title: 云深不知处
 
 - [20250822 比赛总结](https://2024wangyuxuan.github.io/pages/20250822)
 
+- [20250823 比赛总结](https://2024wangyuxuan.github.io/pages/20250823)
+
 
 ### 编辑网站相关
 
