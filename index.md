@@ -15,6 +15,8 @@ title: 云深不知处
 
 - [JZOJ 模拟赛总结](https://2024wangyuxuan.github.io/pages/JZOJ)
 
+- [Atcoder 比赛总结](https://2024wangyuxuan.github.io/pages/Atcoder)
+
 
 ### 编辑网站相关
 
