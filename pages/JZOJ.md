@@ -4,6 +4,8 @@ title : JZOJ 模拟赛总结
 
 ---
 
+# JZOJ 模拟赛总结
+
 - [20250706 比赛总结](https://2024wangyuxuan.github.io/pages/20250706)
 
 - [20250727 比赛总结](https://2024wangyuxuan.github.io/pages/20250727)
