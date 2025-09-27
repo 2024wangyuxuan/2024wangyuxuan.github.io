@@ -35,3 +35,5 @@ title : JZOJ 模拟赛总结
 - [20250906 比赛总结](https://2024wangyuxuan.github.io/pages/20250906)
 
 - [20250913 比赛总结](https://2024wangyuxuan.github.io/pages/20250913)
+
+- [20250927 比赛总结](https://2024wangyuxuan.github.io/pages/20250927)
