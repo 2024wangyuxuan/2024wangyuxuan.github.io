@@ -1,2 +1,2 @@
 
-![](https://atrating.baoshuo.dev/rating?username=2024wangyuxuan)
+![](https://atrating.baoshuo.dev/rating?username=nauyng)
