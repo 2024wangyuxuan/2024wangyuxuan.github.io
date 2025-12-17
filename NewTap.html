@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>禅意语录 · 每日一句</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'STFangsong', 'FangSong', '仿宋', 'FZShuTi', 'STKaiti', 'KaiTi', '楷体', serif;
+            background-color: #faf8f5;
+            color: #2c2416;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            line-height: 1.8;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(180, 170, 150, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(150, 140, 120, 0.03) 0%, transparent 50%);
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .title {
+            font-size: 1.8rem;
+            color: #8a7a63;
+            margin-bottom: 60px;
+            letter-spacing: 8px;
+            font-weight: 300;
+            position: relative;
+        }
+        
+        .title::before, .title::after {
+            content: "·";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #b8a98f;
+            font-size: 1.5rem;
+        }
+        
+        .title::before {
+            left: calc(50% - 100px);
+        }
+        
+        .title::after {
+            right: calc(50% - 100px);
+        }
+        
+        .quote-container {
+            position: relative;
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+        
+        .quote-text {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            color: #3a3223;
+            font-weight: 400;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            padding: 0 20px;
+            position: relative;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+            letter-spacing: 1px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .quote-decoration {
+            position: absolute;
+            font-size: 5rem;
+            color: #d8d0c0;
+            font-family: 'STFangsong', 'FangSong', '仿宋', 'FZShuTi', 'STKaiti', 'KaiTi', '楷体', serif;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        .quote-decoration.left {
+            top: 0;
+            left: 0;
+        }
+        
+        .quote-decoration.right {
+            bottom: 0;
+            right: 0;
+            transform: rotate(180deg);
+        }
+        
+        .refresh-hint {
+            font-size: 0.9rem;
+            color: #a89a82;
+            margin-top: 80px;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+        
+        .divider {
+            height: 1px;
+            width: 100px;
+            background: linear-gradient(to right, transparent, #d8d0c0, transparent);
+            margin: 40px auto;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 1.5rem;
+                letter-spacing: 5px;
+                margin-bottom: 40px;
+            }
+            
+            .title::before {
+                left: calc(50% - 80px);
+            }
+            
+            .title::after {
+                right: calc(50% - 80px);
+            }
+            
+            .quote-text {
+                font-size: 1.5rem;
+                padding: 0 15px;
+            }
+            
+            .quote-decoration {
+                font-size: 4rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+                letter-spacing: 3px;
+            }
+            
+            .title::before {
+                left: calc(50% - 60px);
+            }
+            
+            .title::after {
+                right: calc(50% - 60px);
+            }
+            
+            .quote-text {
+                font-size: 1.3rem;
+            }
+            
+            .quote-decoration {
+                font-size: 3rem;
+            }
+        }
+    </style>
+    
+    <!-- 引入本地仿宋字体支持 -->
+    <style>
+        @font-face {
+            font-family: 'LocalFangsong';
+            src: local('STFangsong'), local('FangSong'), local('仿宋'), local('FZShuTi'), local('STKaiti');
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">禅意语录</h1>
+        
+        <div class="divider"></div>
+        
+        <div class="quote-container">
+            <div class="quote-decoration left">「</div>
+            <div class="quote-text" id="quoteText"></div>
+            <div class="quote-decoration right">「</div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="refresh-hint">刷新页面获取新句子</div>
+    </div>
+
+    <script>
+        // 更新后的句子数组
+        const quotes = [
+            "前尘种种，似烟似幻，惟有此人教我深感不负大好春光。",
+            "天子坛中寻一笑，枕月云深魏无羡。",
+            "生来一人，去时孤身，便是江澄其人",
+            "义城有三盲，真盲，假盲，心盲。",
+            "愿来世，你晓天，晓地，晓星尘。",
+            "忘羡一曲心系君，瀚海百重长相忆。",
+            "负霜华，行世路。一同星尘，除魔歼邪",
+            "明月清风晓星尘，傲雪凌霜宋子琛",
+            "别师犹染凡心，剑端新雪霁，独恨无留迹",
+            "天自撰我命，唤魂为逆，肆酒行，削竹横笛借音",
+            "月濯云深里，留雪拥襟，持琴问灵，拂剑承天地",
+            "傲骨几锉尽，惟立仇心，十方雷霆乍起，振紫衣",
+            "清风策萍影，远夜如移，纵入冥泥，明镜仍为寄",
+            "掌覆道左阴翳，妄握天格命理",
+            "度履孤霜千里，凭樽还如对知己，皓月清风长系思与荒城忆",
+            "忘羡一曲远，曲终人不散。",
+            "这颗糖微微发黑，一定不能吃了。被握的太紧，已经有点碎了。",
+            "我想带一人回云深不知处。带回去，藏起来。",
+            "生前哪管身后事，浪得几日是几日。",
+            "我薛洋，晓天地，晓人心，但终究不晓星尘。",
+            "亦恶亦怜薛成美，半生恶尽半生痴。",
+            "云深夜阑拥月色，少年携酒晚归程，酒香醉情抬眸间，白衣翩立似惊鸿。",
+            "我见诸君多有病，料诸君见我、应如是。",
+            "我等你十三载，你如何回我？",
+            "喝他喝过的酒，受他受过的伤。",
+            "生老病死，八苦之四，众生必经，江澄亦是。",
+            "其实从头到尾，被挫骨扬灰，灰飞烟灭的，只有温情一人。",
+            "只羡忘羡不羡仙，说是天天就天天",
+            "魏婴，你给我听好！好好护着江澄！死也要护着他！知不知道！",
+            "生前风采有谁听闻，身后恶名竟无人争，当初穿林拂叶见识得，白衣少年胆怯几分",
+            "为你明灯三千，为你花开满城，为你所向披靡。",
+            "是非在己，毁誉由人，得失不论。",
+            "为遇一人入红尘，人去我亦去，此生不留尘。",
+            "用我一生，换你十年天真无邪。"
+        ];
+        
+        // 页面加载时显示随机句子
+        function displayRandomQuote() {
+            const quoteText = document.getElementById('quoteText');
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            
+            // 直接设置句子内容，不再有淡出淡入效果
+            quoteText.textContent = quotes[randomIndex];
+            
+            // 应用淡入动画
+            quoteText.style.opacity = '1';
+            quoteText.style.transform = 'translateY(0)';
+        }
+        
+        // 页面加载完成后执行一次
+        window.addEventListener('load', displayRandomQuote);
+    </script>
+</body>
+</html>
