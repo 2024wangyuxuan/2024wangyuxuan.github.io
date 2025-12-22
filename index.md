@@ -26,3 +26,8 @@ title: 云深不知处
 
 - [如何采用 github Pages 搭建个人博客](https://www.luogu.com.cn/article/cfo1y9z4)
 
+- [设计页面的 AI 对话](https://chat.deepseek.com/a/chat/s/9ea57c3f-3d3d-436d-9643-6269fb098ecf)
+
+### 题外话
+
+- [青春记忆 - 烧烤团建日记](https://2024wangyuxuan.github.io/pages/sktjrj)
