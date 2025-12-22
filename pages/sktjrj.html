@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青春记忆 - 烧烤团建日记</title>
+    <!-- Katex CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <!-- 代码高亮 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .date {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .red-delta {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .content {
+            font-size: 1.1rem;
+        }
+        
+        .content h3 {
+            color: #2c3e50;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .content p {
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+        
+        .content strong {
+            color: #3498db;
+            font-weight: 600;
+        }
+        
+        .content em {
+            color: #9b59b6;
+            font-style: italic;
+        }
+        
+        .katex {
+            font-size: 1.05em;
+        }
+        
+        .highlight {
+            background-color: #fff9e6;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #f1c40f;
+            margin: 20px 0;
+        }
+        
+        .names {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .name-tag {
+            background-color: #e8f4fc;
+            color: #2980b9;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eaeaea;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+        
+        .decoration {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.08) 0%, rgba(155, 89, 182, 0.08) 100%);
+            z-index: 0;
+        }
+        
+        .decoration.top-right {
+            top: -80px;
+            right: -80px;
+        }
+        
+        .decoration.bottom-left {
+            bottom: -80px;
+            left: -80px;
+        }
+        
+        .content-container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 25px;
+            }
+            
+            .title {
+                font-size: 1.8rem;
+            }
+            
+            .content {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: 1.6rem;
+            }
+            
+            .date {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="decoration top-right"></div>
+        <div class="decoration bottom-left"></div>
+        
+        <div class="content-container">
+            <div class="header">
+                <h1 class="title">青春记忆 - 烧烤团建日记</h1>
+                <div class="date">
+                    <span>12月19日</span>
+                    <span class="red-delta">Δ</span>
+                    <span>难忘的一天</span>
+                </div>
+            </div>
+            
+            <div class="content">
+                <p>今天团建了，真的非常开心，之前认为打游戏是最开心的事了，现在看来和同学一起吃东西玩游戏才是最开心的。</p>
+                
+                <p>最开心的莫过于烧烤，和周行健，袁微懿，梁千妤，郭尹初还有赵佳禾一组烧烤，主力是我和袁班。令我没想到的事原本以为会很内向的赵佳禾竟然十分幽默，还是义和团忠实的粉丝。</p>
+                
+                <div class="names">
+                    <div class="name-tag">周行健</div>
+                    <div class="name-tag">袁微懿</div>
+                    <div class="name-tag">梁千妤</div>
+                    <div class="name-tag">郭尹初</div>
+                    <div class="name-tag">赵佳禾</div>
+                    <div class="name-tag">袁班</div>
+                </div>
+                
+                <div class="highlight">
+                    <p>烤烧烤的过程中我制造了 dick black，一根香肠掉到炉子里了，在烤了七七四十九天后被烤成黑煤炭了。还有梁千妤的鸡翅，一开始烤没有技巧，外面烤熟了里面还没熟，反复给梁千妤吃又反复回炉重造，在经过 <span class="katex">4</span> 次抢救之后终于煮熟了。</p>
+                </div>
+                
+                <p>在烧烤的过程中感受到了助人为乐的快乐，也感受到了同学之间的友谊。烧烤技巧从原来的不知道怎么烤到后来烧烤得到了同学（梁千妤）的称赞，还有袁班的热情和幽默，周行健的积极，赵佳禾的义和团，这都是不可磨灭的回忆。</p>
+                
+                <p>离开时竟罕见的出现了舍不得的情绪，没有刻意的营造，就是在心底最深处的感受。</p>
+                
+                <p>今天是一生中最难忘的一天，超过了之前的任何一次，收获的友谊最为真实充足。愿这种友谊能地久天长，永不消失。同学们，你们永远活在我的心中。</p>
+            </div>
+            
+            <div class="footer">
+                <p>记录于一次难忘的团建活动 | 友谊永恒</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Katex JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <!-- Highlight JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+    <script>
+        // 渲染KaTeX公式
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError: false
+            });
+            
+            // 代码高亮
+            hljs.highlightAll();
+        });
+        
+        // 为名字标签添加交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const nameTags = document.querySelectorAll('.name-tag');
+            nameTags.forEach(tag => {
+                tag.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                    this.style.transition = 'all 0.3s ease';
+                });
+                
+                tag.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
