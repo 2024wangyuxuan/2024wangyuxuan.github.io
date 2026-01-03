@@ -28,6 +28,8 @@ title: 云深不知处
 
 - [设计页面的 AI 对话](https://chat.deepseek.com/a/chat/s/9ea57c3f-3d3d-436d-9643-6269fb098ecf)
 
+- [新建标签页 （ 魔道祖师 ）](https://2024wangyuxuan.github.io/pages/NewTape)
+
 ### 题外话
 
 - [青春记忆 - 烧烤团建日记](https://2024wangyuxuan.github.io/pages/sktjrj)
