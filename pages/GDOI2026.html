@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联合省选2026游记</title>
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <!-- 字体与图标 (Font Awesome 用于装饰) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f3f4f6 0%, #e5e7eb 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1f2937;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .paper {
+            background-color: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            padding: 3rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .paper:hover {
+            transform: translateY(-4px);
+        }
+
+        /* 装饰性线条 */
+        .paper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+        }
+
+        .paper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at 100% 100%, rgba(59,130,246,0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1e293b, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2.5rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .subhead i {
+            color: #3b82f6;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            margin-top: 2.2rem;
+            margin-bottom: 1.2rem;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.4rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            color: #334155;
+            display: inline-block;
+            background: linear-gradient(to right, #f1f5f9, transparent);
+            padding: 0.3rem 1rem 0.3rem 0;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+            color: #2d3a4f;
+            text-align: justify;
+        }
+
+        /* 引用块 */
+        blockquote {
+            margin: 2rem 0;
+            padding: 1.2rem 2rem;
+            background: #f8fafc;
+            border-left: 6px solid #3b82f6;
+            border-radius: 0 20px 20px 0;
+            font-style: italic;
+            color: #1e293b;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            position: relative;
+        }
+
+        blockquote::before {
+            content: '\201C';
+            font-size: 4rem;
+            position: absolute;
+            left: 0.2rem;
+            top: -0.5rem;
+            color: #cbd5e1;
+            font-family: serif;
+            opacity: 0.5;
+        }
+
+        /* 行内代码（用于题目编号等） */
+        code, .code {
+            background-color: #eef2ff;
+            color: #4338ca;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 0.95em;
+            padding: 0.2rem 0.5rem;
+            border-radius: 8px;
+            border: 1px solid #c7d2fe;
+            white-space: nowrap;
+        }
+
+        /* 数学公式内联时稍作突出 */
+        .katex {
+            font-size: 1.1em;
+            background-color: #f1f5f9;
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+        }
+
+        /* 数字和特殊标记 */
+        .highlight-number {
+            font-weight: 600;
+            color: #2563eb;
+            background: #dbeafe;
+            padding: 0.1rem 0.4rem;
+            border-radius: 20px;
+            font-size: 0.95em;
+        }
+
+        hr {
+            margin: 2.5rem 0 1.5rem;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+        }
+
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .footer i {
+            color: #f43f5e;
+            margin: 0 0.2rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .paper {
+                padding: 2rem 1.5rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            blockquote {
+                padding: 1rem 1.5rem;
+            }
+        }
+    </style>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			renderMathInElement(document.body, {
+			  // customised options
+			  // • auto-render specific keys, e.g.:
+			  delimiters: [
+				  {left: '$$', right: '$$', display: true},
+				  {left: '$', right: '$', display: false},
+				  {left: '\\(', right: '\\)', display: false},
+				  {left: '\\[', right: '\\]', display: true}
+			  ],
+			  // • rendering keys, e.g.:
+			  throwOnError : false
+			});
+		});
+	</script>
+</head>
+<body>
+    <div class="container">
+        <article class="paper">
+            <h1>联合省选2026游记</h1>
+            <div class="subhead">
+                <i class="fas fa-feather-alt"></i> 
+                <span>初二 · 遗憾与成长</span>
+            </div>
+
+            <p>初二了，理应是该冲一下省选的，但是省选前并没有停课，拉完了。</p>
+
+            <h3>Day -?~Day -1</h3>
+            <p>因为没有停课，所以每天晚修才有时间来机房。懒得学新算法了，所以每天晚上都去 VP CF 的 Div.1。做了不少思维题，但是感觉对自己的思维没有太大的提升。赛前没有任何的动员工作，这就是没停课的后果。</p>
+
+            <h3>Day 0</h3>
+            <p>上午文化课，下午请了半天假，因为在本校省选，所以先拿了胸牌，然后试机，键盘很顺畅，感觉良好，心态++。</p>
+            <p>晚上老师给没停课的人做了个赛前小动员，学会了看程序的时间空间，希望省选能用上。</p>
+
+            <h3>Day 1</h3>
+            <blockquote>木叶飞舞之处，火亦生生不息。</blockquote>
+            <p>考试开始后，先飞速浏览了题目，<code>T1</code> 是最不擅长的期望题，但是都初二了，一想到去年就有大奆初一两天 200+ 就充满了信心。首先算答案是简单的，很快就明确了 DP 的方向，但是我要怎么算链长和链长总和，一开始把它们和在一个状态里想了很久，然后尝试上厕所解压。</p>
+            <p>没想到机房太多人上厕所举了几次手都没成功，于是冷静下来重新思考，发现可以把要往上合并的链和其他链拆开，然后经典的维护前后缀和，然后开打。</p>
+            <p>但是事实又一次证明我不会打代码，<code>T1</code> 调了很久没调出来，于是感觉自己做法假了，遂弃之。从一整条链的方向思考，推了半天发现又回到了原先的做法，心中赶紧默念 “天上天下唯我独尊 ！” ，稳定了一下心态，加强自己的信心。</p>
+            <p>于是再次申请上厕所，竟然成功了。回来后开始检查，最终在 <code>13:00</code> 左右调完，发现在没开 O2 的情况下大样例依旧跑得飞快，只用了 0.3s，感觉稳了。然后花 20 分钟打完了 <code>T2</code> 的 <span class="highlight-number">15</span> 分 （你没看错，就是 20 分钟），最后没打完 <code>T3</code> 的 <span class="highlight-number">12</span> 分。</p>
+            <p>出场估分 <span class="katex">$100+15+0=115$</span>。</p>
+            <p>听同学说我 <code>T1</code> 假掉了，是 <span class="katex">$O(n^3)$</span> 的 ？感觉不妙。</p>
+            <p>下午和晚上基本没干啥正事，就是一个劲的 Hack 自己的 <code>T1</code>。</p>
+
+            <h3>Day 2</h3>
+            <blockquote>纵使我身形俱灭，也定将恶鬼斩杀。</blockquote>
+            <p>到的明显晚了许多，在 <code>7:30</code> 左右才到，然后又吃了两倍的早餐，吃完后马上就去考场了。</p>
+            <p>开题，发现 <code>T1</code> 是交互题，这个我擅长啊，感觉稳了。<code>T3</code> 是啥，罗里吧嗦的，意义不明。</p>
+            <p>先看 <code>T1</code> 的部分分，有一档是 <span class="katex">$n+\log n$</span>，还有一档是 <span class="katex">$2n$</span>，不到 10 分钟就做完了 A 性质，然后手玩 B 性质玩了很久，<span class="katex">$n+\log n$</span> 的方法是显然的，然后考虑分块或者倍增，但均无功而返。偶然见发现可以不依靠 <span class="katex">$0$</span> 的位置求答案，然后就会了 <code>T1</code>。代码很快就调完了。</p>
+            <p>然后 <code>T3</code> 感觉很不可做，所以决定 all in <code>T2</code>。首先是 <span class="katex">n\le 8</span> 的暴力，感觉有点难度，直接爆搜过不了，然后打了一个记忆化过了大样例，又卡了一下常数。</p>
+            <p>然后来到 <span class="katex">$k\le 3$</span>，手玩了一下感觉可以直接模拟，然后没过大样例，不知道那里错了，感觉要整合出一个操作，但是没玩出来。后来又尝试直接解决第一问，但是失败了。</p>
+            <p>出场估分 <span class="katex">$100+8+0=108$</span>，两天均没有达到大众分，输完了。</p>
+
+            <h3>后记</h3>
+            <p>本来以为会有很长一段的罚作时间，但是两天都没有搞到腐，还是太弱了。赛后默默在机房扛一袋米，等出分再说把。</p>
+            <p>出分了，Day2 T2 因为没有特判最后一个位置是 <span class="katex">$0$</span> 导致 <span class="katex">$100\to 20$</span>，最终 <span class="katex">$223\to 135$</span>，我不知道该如何评价，在教室哭了半个晚上。</p>
+
+            <hr>
+            <div class="footer">
+                <div><i class="fas fa-seedling"></i> 无论如何，这都是独一无二的青春 <i class="fas fa-seedling"></i></div>
+                <div><span class="code">2026 · 记于机房</span></div>
+            </div>
+        </article>
+    </div>
+
+    <!-- KaTeX 自动渲染 -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+        // 确保 KaTeX 渲染所有数学公式
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError: false,
+                macros: {
+                    "\\tt": "\\texttt"   // 简单映射 \tt -> \texttt，但最好直接用\texttt
+                }
+            });
+
+            // 由于文中大量使用 $\tt T1$，而 KaTeX 默认不支持 \tt，故替换文本中的 \tt 为 \texttt
+            // 这里我们直接在HTML中已经手动将 $\tt T1$ 改为了 `<code>T1</code>` 或保留数学模式但改用 \texttt。
+            // 上述HTML中我们使用了 `<code>T1</code>` 而非数学模式，所以无需额外处理。
+            // 但如果你希望保留数学模式，可以取消下面注释，并在HTML中保留 $\tt T1$，但需要宏定义。
+            // 为保险，我们在上面 macros 中添加了 "\\tt": "\\texttt"，这样 $\tt T1$ 会尝试渲染。
+            // 但最好还是统一用 \texttt，在文章中直接写 $\texttt{T1}$。当前版本我们使用了<code>，所以安全。
+        });
+    </script>
+</body>
+</html>
