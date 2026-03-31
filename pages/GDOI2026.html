@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>联合省选2026游记 · 背景替换版</title>
+    <title>联合省选2026游记</title>
     <!-- KaTeX CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
     <!-- 字体与图标 (Font Awesome 用于装饰) -->
@@ -14,14 +14,10 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
-        .container {
-            max-width: 900px;
-            width: 100%;
-        }
+
         body {
-            /* 替换壁纸：用户指定的图片 */
-            background: url('https://tse3.mm.bing.net/th/id/OIP.gU5r9PWC8ygbmaPP2HY5PgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3') no-repeat center center fixed;
+            /* 用户指定壁纸 */
+            background: url('https://tse3-mm.cn.bing.net/th/id/OIP-C.k2GmKvMDs5aTV6D2KoDQaAHaEc?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3') no-repeat center center fixed;
             background-size: cover;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             color: #1f2937;
@@ -30,11 +26,16 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            /* 保留一个备选背景色，以防图片加载失败 */
-            background-color: #e5e7eb;
+            background-color: #e5e7eb; /* 备选背景色，仅当图片加载失败时显示 */
         }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
         .paper {
-            /* 半透明白色磨砂效果，确保文字在复杂背景下清晰 */
+            /* 半透明白色磨砂效果，但无模糊，保证背景高清 */
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 28px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -42,14 +43,14 @@
             position: relative;
             overflow: hidden;
             transition: transform 0.2s ease;
-            backdrop-filter: blur(2px); /* 轻微模糊背后壁纸，增加质感 */
+            /* 已移除 backdrop-filter: blur(2px); 背景完全清晰 */
         }
 
         .paper:hover {
             transform: translateY(-4px);
         }
 
-        /* 装饰性线条 (保持不变) */
+        /* 装饰性线条 */
         .paper::before {
             content: '';
             position: absolute;
@@ -84,7 +85,7 @@
 
         .subhead {
             font-size: 1.1rem;
-            color: #4b5563; /* 稍微加深保证可读性 */
+            color: #4b5563;
             margin-bottom: 2.5rem;
             border-left: 4px solid #3b82f6;
             padding-left: 1.2rem;
@@ -125,7 +126,6 @@
             text-align: justify;
         }
 
-        /* 引用块 (稍微加深背景以适应壁纸) */
         blockquote {
             margin: 2rem 0;
             padding: 1.2rem 2rem;
@@ -150,7 +150,6 @@
             opacity: 0.5;
         }
 
-        /* 行内代码（用于题目编号等） */
         code, .code {
             background-color: #eef2ff;
             color: #4338ca;
@@ -162,7 +161,6 @@
             white-space: nowrap;
         }
 
-        /* 数学公式内联时稍作突出 */
         .katex {
             font-size: 1.1em;
             background-color: #f1f5f9;
@@ -170,7 +168,6 @@
             border-radius: 6px;
         }
 
-        /* 数字和特殊标记 */
         .highlight-number {
             font-weight: 600;
             color: #2563eb;
@@ -190,7 +187,7 @@
         .footer {
             margin-top: 3rem;
             text-align: center;
-            color: #6b7280; /* 调亮一点适应背景 */
+            color: #6b7280;
             font-size: 0.95rem;
             display: flex;
             flex-direction: column;
@@ -202,7 +199,6 @@
             margin: 0 0.2rem;
         }
 
-        /* 响应式 */
         @media (max-width: 640px) {
             .paper {
                 padding: 2rem 1.5rem;
@@ -221,7 +217,6 @@
             }
         }
     </style>
-    <!-- KaTeX 渲染脚本 (与之前保持一致) -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
     <script>
